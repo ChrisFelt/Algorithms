@@ -7,6 +7,7 @@ class Solution(object):
         :type x: int
         :rtype: bool
         """
+        # Time complexity of this solution: O(n)
         # handle edge cases
         if x < 0:
             return False
