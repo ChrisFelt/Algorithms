@@ -66,12 +66,14 @@ class TestSolution(unittest.TestCase):
         # check that linked list was fully iterated through
         if cur_head:
             self.assertFalse(cur_head.get_next())
+        else:
+            print("No head found test001")
         # check test_result for any False results
         self.assertFalse(False in test_result)
 
     def test_002(self):
-        head1 = []
-        head2 = []
+        head1 = None
+        head2 = None
         answer = []
 
         cur_head, test_result = test_solution(head1, head2, answer)
@@ -79,6 +81,55 @@ class TestSolution(unittest.TestCase):
         # check that linked list was fully iterated through
         if cur_head:
             self.assertFalse(cur_head.get_next())
+        else:
+            print("No head found test002")  # no head expected for this test
+        # check test_result for any False results
+        self.assertFalse(False in test_result)
+
+    def test_003(self):
+        head1 = None
+        head2 = create_linked_list([0])
+        answer = [0]
+
+        cur_head, test_result = test_solution(head1, head2, answer)
+
+        # check that linked list was fully iterated through
+        if cur_head:
+            self.assertFalse(cur_head.get_next())
+        else:
+            print("No head found test003")
+        # check test_result for any False results
+        self.assertFalse(False in test_result)
+
+    # test with other node None
+    def test_004(self):
+        head1 = None
+        head2 = create_linked_list([1, 8, 9])
+        answer = [1, 8, 9]
+
+        cur_head, test_result = test_solution(head1, head2, answer)
+
+        # check that linked list was fully iterated through
+        if cur_head:
+            self.assertFalse(cur_head.get_next())
+        else:
+            print("No head found test004")
+        # check test_result for any False results
+        self.assertFalse(False in test_result)
+
+    # test negative numbers
+    def test_005(self):
+        head1 = create_linked_list([-7, -5, 17])
+        head2 = create_linked_list([-9, -8, -1])
+        answer = [-9, -8, -7, -5, -1, 17]
+
+        cur_head, test_result = test_solution(head1, head2, answer)
+
+        # check that linked list was fully iterated through
+        if cur_head:
+            self.assertFalse(cur_head.get_next())
+        else:
+            print("No head found test005")
         # check test_result for any False results
         self.assertFalse(False in test_result)
 
