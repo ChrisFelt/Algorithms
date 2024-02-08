@@ -2,7 +2,7 @@ import unittest
 from palindrome_number import Solution
 
 
-class TestCheckPwd(unittest.TestCase):
+class TestSolution(unittest.TestCase):
 
     # test the given solutions
     def test_001(self):
