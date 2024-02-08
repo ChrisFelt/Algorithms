@@ -72,8 +72,8 @@ class TestSolution(unittest.TestCase):
         self.assertFalse(False in test_result)
 
     def test_002(self):
-        head1 = None
-        head2 = None
+        head1 = create_linked_list([])
+        head2 = create_linked_list([])
         answer = []
 
         cur_head, test_result = test_solution(head1, head2, answer)
