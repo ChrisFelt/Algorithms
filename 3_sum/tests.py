@@ -110,7 +110,7 @@ class TestSolution(unittest.TestCase):
     # all numbers > 0 edge case
     def test_006(self):
         # setup test
-        nums = [[1, 1, 2, 3, 3, 3, 3, 5, 6, 7]]
+        nums = [1, 1, 2, 3, 3, 3, 3, 5, 6, 7]
         solution = []
         check_solution = Solution()
 
