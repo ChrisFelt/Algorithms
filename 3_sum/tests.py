@@ -107,6 +107,21 @@ class TestSolution(unittest.TestCase):
         # check against solution
         self.assertTrue(compare_lists(test, solution))
 
+    # all numbers > 0 edge case
+    def test_006(self):
+        # setup test
+        nums = [[1, 1, 2, 3, 3, 3, 3, 5, 6, 7]]
+        solution = []
+        check_solution = Solution()
+
+        # get test results and sort
+        test = check_solution.threeSum(nums)
+        sort_all(test)
+        sort_all(solution)
+
+        # check against solution
+        self.assertTrue(compare_lists(test, solution))
+
 
 if __name__ == '__main__':
     unittest.main()
