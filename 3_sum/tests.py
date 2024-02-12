@@ -5,7 +5,7 @@ from three_sum import Solution
 def sort_all(lst):
     """
     :param lst: List[List[int]]
-    :return: List[Set(int)]
+    :return: None, sorts in place
     """
     # sort all nested lists then lst
     for i in lst:
@@ -77,6 +77,7 @@ class TestSolution(unittest.TestCase):
         # check against solution
         self.assertTrue(compare_lists(test, solution))
 
+    # many possible repeats edge case
     def test_004(self):
         # setup test
         nums = [-3, -3, -1, -1, 0, 0, 0, 1, 1, 2, 3]
@@ -91,6 +92,7 @@ class TestSolution(unittest.TestCase):
         # check against solution
         self.assertTrue(compare_lists(test, solution))
 
+    # no numbers edge case
     def test_005(self):
         # setup test
         nums = []
