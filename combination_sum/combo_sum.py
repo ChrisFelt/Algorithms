@@ -1,5 +1,14 @@
 class Solution(object):
     def comboSumRecurse(self, curr, solution, total, candidates, target, output):
+        """
+        :param curr: int, current index
+        :param solution: List[int]
+        :param total: int
+        :param candidates: List[int]
+        :param target: int
+        :param output: List[int]
+        :rtype: None
+        """
         # base case 1: when target reached, add solution set to output
         if total == target:
             output.append([])
