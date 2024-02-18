@@ -31,3 +31,11 @@ class Solution(object):
         :type target_sum: int
         :rtype: bool
         """
+        pass
+
+    def gen_tree(self, node_list):
+        """
+        :param node_list: List[int], breadth-first ordered list of tree node values
+        :return: TreeNode
+        """
+        pass
