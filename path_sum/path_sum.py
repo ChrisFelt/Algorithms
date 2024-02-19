@@ -25,7 +25,6 @@ class TreeNode(object):
 
 
 class Solution(object):
-
     def has_path_sum(self, node, target):
         """
         :param node: TreeNode
