@@ -35,6 +35,17 @@ class TestSolution(unittest.TestCase):
         # compare answer to solution
         self.assertFalse(solution)
 
+    # test negative values
+    def test_004(self):
+        # setup test
+        check_solution = Solution()
+        root = check_solution.create_tree([-2, None, -3])
+        target = -5
+        solution = check_solution.has_path_sum(root, target)
+
+        # compare answer to solution
+        self.assertTrue(solution)
+
 
 if __name__ == '__main__':
     unittest.main()

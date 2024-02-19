@@ -25,16 +25,30 @@ class TreeNode(object):
 
 
 class Solution(object):
-    def has_path_sum(self, root, target_sum):
+
+    def has_path_sum(self, node, target):
         """
-        :type root: TreeNode
-        :type target_sum: int
+        :param node: TreeNode
+        :param target: int
         :rtype: bool
         """
-        pass
-        # recursively search down each branching path to find the solution - return True if target reached, else None
+        # base case: reached the end of the tree
+        if node is None:
+            return False
+
+        target = target - node.get_val()
+        # base case: target == 0 and node is a leaf node
+        if target == 0 and node.get_left() is None and node.get_right() is None:
+            return True
+
+        # recursively search down each branching path to find the solution
+        return self.has_path_sum(node.get_left(), target) or self.has_path_sum(node.get_right(), target)
 
     def create_tree(self, vals):
+        """
+        :param vals: List[int]
+        :rtype: TreeNode
+        """
         # edge case: empty list passed
         if len(vals) == 0:
             return
@@ -76,5 +90,3 @@ class Solution(object):
             par_row += 1
 
         return root
-
-
