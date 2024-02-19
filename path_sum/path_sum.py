@@ -34,46 +34,47 @@ class Solution(object):
         pass
         # recursively search down each branching path to find the solution - return True if target reached, else None
 
-    def tree_recurse(self, cur, node_list, left_ind=1, right_ind=2):
-        # base case 1: left index exceeds the node list
-        if left_ind >= len(node_list):
-            return
-
-        # recurse down left child path
-        if node_list[left_ind] is not None:
-            # find next indices for children of left node
-            # next left child index: always add right_ind to left_ind
-            # next right child index: always add + 1 to left_ind
-            next_left_ind = left_ind + right_ind
-            next_right_ind = next_left_ind + 1
-            cur.set_left(TreeNode(node_list[left_ind]))
-            self.tree_recurse(cur.get_left(), node_list, next_left_ind, next_right_ind)
-
-        # base case 2: right index exceeds the node list
-        if right_ind >= len(node_list):
-            return
-
-        # recurse down right child path
-        if node_list[right_ind] is not None:
-            # find next indices for children of right node
-            next_left_ind = (2 * right_ind) + left_ind
-            next_right_ind = next_left_ind + 1
-            cur.set_right(TreeNode(node_list[right_ind]))
-            self.tree_recurse(cur.get_right(), node_list, next_left_ind, next_right_ind)
-
-    def gen_tree(self, node_list):
-        """
-        :param node_list: List[int], breadth-first ordered list of tree node values
-        :return: TreeNode
-        """
+    def create_tree(self, vals):
         # edge case: empty list passed
-        if len(node_list) == 0:
+        if len(vals) == 0:
             return
 
-        # create root node and generate tree
-        root = TreeNode(node_list[0])
+        node_rows = []
 
-        self.tree_recurse(root, node_list)
+        # create root node
+        root = TreeNode(vals[0])
+        node_rows.append([root])
+
+        # track indices
+        val_ind = 1
+        par_row = 0  # current parent row
+
+        # iterate through values to construct the tree
+        while val_ind < len(vals):
+            # create a new row in the tree and fill it in
+            node_rows.append([])
+            cur_par = 0
+            while cur_par < len(node_rows[par_row]):
+                left = None
+                right = None
+                # create and connect children to parent if parent exists
+                if node_rows[par_row][cur_par] is not None:
+                    # child node is created unless the value is None
+                    if vals[val_ind] is not None:
+                        left = TreeNode(vals[val_ind])
+                        node_rows[par_row][cur_par].set_left(left)
+                    if vals[val_ind + 1] is not None:
+                        right = TreeNode(vals[val_ind + 1])
+                        node_rows[par_row][cur_par].set_right(right)
+                    val_ind += 2
+
+                # always append children or none to the node_rows array
+                node_rows[par_row + 1].append(left)
+                node_rows[par_row + 1].append(right)
+                cur_par += 1  # left and right child complete, go to next parent
+
+            par_row += 1
+
         return root
 
 

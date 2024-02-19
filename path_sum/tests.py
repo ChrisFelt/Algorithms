@@ -8,7 +8,7 @@ class TestSolution(unittest.TestCase):
     def test_001(self):
         # setup test
         check_solution = Solution()
-        root = check_solution.gen_tree([5, 4, 8, 11, None, 13, 4, 7, 2, None, None, None, 1])
+        root = check_solution.create_tree([5, 4, 8, 11, None, 13, 4, 7, 2, None, None, None, 1])
         target = 22
         solution = check_solution.has_path_sum(root, target)
 
@@ -18,7 +18,7 @@ class TestSolution(unittest.TestCase):
     def test_002(self):
         # setup test
         check_solution = Solution()
-        root = check_solution.gen_tree([1, 2, 3])
+        root = check_solution.create_tree([1, 2, 3])
         target = 5
         solution = check_solution.has_path_sum(root, target)
 
@@ -28,7 +28,7 @@ class TestSolution(unittest.TestCase):
     def test_003(self):
         # setup test
         check_solution = Solution()
-        root = check_solution.gen_tree([])
+        root = check_solution.create_tree([])
         target = 0
         solution = check_solution.has_path_sum(root, target)
 
