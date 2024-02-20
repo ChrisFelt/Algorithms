@@ -10,7 +10,7 @@ class TestSolution(unittest.TestCase):
         check_solution = Solution()
         root = check_solution.create_tree([5, 4, 8, 11, None, 13, 4, 7, 2, None, None, 5, 1])
         target = 22
-        test_solution = check_solution.has_path_sum_II(root, target)
+        test_solution = check_solution.pathSum(root, target)
         answer = [[5, 4, 11, 2], [5, 8, 4, 5]]
 
         # compare answer to solution
@@ -21,7 +21,7 @@ class TestSolution(unittest.TestCase):
         check_solution = Solution()
         root = check_solution.create_tree([1, 2, 3])
         target = 5
-        test_solution = check_solution.has_path_sum_II(root, target)
+        test_solution = check_solution.pathSum(root, target)
         answer = []
 
         # compare answer to solution
@@ -33,7 +33,7 @@ class TestSolution(unittest.TestCase):
         check_solution = Solution()
         root = check_solution.create_tree([])
         target = 5
-        test_solution = check_solution.has_path_sum_II(root, target)
+        test_solution = check_solution.pathSum(root, target)
         answer = []
 
         # compare answer to solution
@@ -45,7 +45,7 @@ class TestSolution(unittest.TestCase):
         check_solution = Solution()
         root = check_solution.create_tree([-5, -4, -8, -11, None, -13, -4, -7, -2, None, None, -5, -1])
         target = -22
-        test_solution = check_solution.has_path_sum_II(root, target)
+        test_solution = check_solution.pathSum(root, target)
         answer = [[-5, -4, -11, -2], [-5, -8, -4, -5]]
 
         # compare answer to solution
