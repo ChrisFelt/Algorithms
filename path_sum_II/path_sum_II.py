@@ -35,10 +35,6 @@ class Solution(object):
         path = []  # current path
 
         def backtrack(node, target):
-            # base case: reached the end of the tree
-            if node is None:
-                return
-
             path.append(node.get_val())
             target = target - node.get_val()
 
@@ -54,7 +50,8 @@ class Solution(object):
                     backtrack(i, target)
                     path.pop()  # backtrack
 
-        backtrack(root, target_sum)
+        if root is not None:
+            backtrack(root, target_sum)
 
         return output
 
