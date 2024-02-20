@@ -35,6 +35,11 @@ class Solution(object):
         path = []  # current path
 
         def backtrack(node, target):
+            """
+            :param node: TreeNode
+            :param target: int
+            :rtype: None
+            """
             path.append(node.get_val())
             target = target - node.get_val()
 
