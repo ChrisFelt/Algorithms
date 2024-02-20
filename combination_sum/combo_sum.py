@@ -31,7 +31,6 @@ class Solution(object):
         solution.pop()
         self.comboSumRecurse(curr + 1, solution, total, candidates, target, output)
 
-
     def combinationSum(self, candidates, target):
         """
         :type candidates: List[int]
