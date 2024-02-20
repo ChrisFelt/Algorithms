@@ -25,13 +25,38 @@ class TreeNode(object):
 
 
 class Solution(object):
-    def has_path_sum_II(self, node, target):
+    def has_path_sum_II(self, root, target_sum):
         """
-        :param node: TreeNode
-        :param target: int
+        :param root: TreeNode
+        :param target_sum: int
         :rtype: bool
         """
-        pass
+        output = []
+        path = []  # current path
+
+        def backtrack(node, target):
+            # base case: reached the end of the tree
+            if node is None:
+                return
+
+            path.append(node.get_val())
+            target = target - node.get_val()
+
+            # base case: target == 0 and node is a leaf node
+            if target == 0 and node.get_left() is None and node.get_right() is None:
+                output.append(path[:])
+                return
+
+            # recurse through children if they exist
+            temp = [node.get_left(), node.get_right()]
+            for i in temp:
+                if i is not None:
+                    backtrack(i, target)
+                    path.pop()  # backtrack
+
+        backtrack(root, target_sum)
+
+        return output
 
     def create_tree(self, vals):
         """
