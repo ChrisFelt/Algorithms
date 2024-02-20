@@ -1,5 +1,5 @@
 import unittest
-from combo_sum_2 import Solution
+from combo_sum_II import Solution
 
 
 def sort_all(lst):
