@@ -16,15 +16,13 @@ class Solution(object):
             # first node of the row is always 1
             output.append([1])
             # iterate through remaining  nodes of the row
-            for j in range(1, len(output[i - 1]) + 1):
-                # last node of the row is always 1
-                if j == len(output[i - 1]):
-                    output[i].append(1)
-
+            for j in range(1, len(output[i - 1])):
                 # sum the two parents of the current node
                 # parents are always the previous and current element (j) of the previous row
-                else:
-                    output[i].append(output[i - 1][j - 1] + output[i - 1][j])
+                output[i].append(output[i - 1][j - 1] + output[i - 1][j])
+
+            # last node of the row is always 1
+            output[i].append(1)
 
         return output
 
