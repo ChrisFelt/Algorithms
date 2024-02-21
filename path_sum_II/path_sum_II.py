@@ -31,6 +31,7 @@ class Solution(object):
         :param target_sum: int
         :rtype: bool
         """
+        # Time complexity of this solution: O(n), visits each node exactly once
         output = []
         path = []  # current path
 
