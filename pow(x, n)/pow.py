@@ -5,6 +5,7 @@ class Solution(object):
         :type n: int
         :rtype: float
         """
+        # Time complexity of this solution: O(log n)
         # edge case: always return 0 if x is 0
         if x == 0:
             return 0
@@ -14,7 +15,7 @@ class Solution(object):
             if n == 0:
                 return 1
 
-            # since x^n * x^n = x^(n + n)
+            # since x^n1 * x^n2 = x^(n1 + n2)
             # find return value at half n and multiply by itself
             temp = divide_and_conquer(x, n // 2)
             temp = temp * temp
