@@ -10,7 +10,7 @@ class Solution:
         # iterate through a and b
         while a_ind >= 0 or b_ind >= 0 or carry == 1:
             if a_ind >= 0:
-                # carry goes up one if current index is 1 
+                # carry goes up one if value at current index is 1 
                 carry += int(a[a_ind])
                 a_ind -= 1
             
@@ -19,7 +19,7 @@ class Solution:
                 b_ind -= 1
             
             # carry % 2 = result of the current position
-            # even when both a and b are 1 and carry is 1, since 3//2 = 1
+            # even when both a and b are 1 and carry is 1, since 3%2 = 1
             sum.append(str(carry % 2))
             # find value of carry for next highest position
             carry = carry // 2
