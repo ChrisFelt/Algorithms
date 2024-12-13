@@ -10,17 +10,17 @@ class TestSolution(unittest.TestCase):
         check_solution = Solution()
         input = "A"
         output = 1
-        test_solution = check_solution.merge(input)
+        test_solution = check_solution.titleToNumber(input)
 
         # compare answer to solution
         self.assertTrue(test_solution == output)
 
     def test_002(self):
-# setup test
+        # setup test
         check_solution = Solution()
         input = "AB"
         output = 28
-        test_solution = check_solution.merge(input)
+        test_solution = check_solution.titleToNumber(input)
 
         # compare answer to solution
         self.assertTrue(test_solution == output)
@@ -30,7 +30,7 @@ class TestSolution(unittest.TestCase):
         check_solution = Solution()
         input = "ZY"
         output = 701
-        test_solution = check_solution.merge(input)
+        test_solution = check_solution.titleToNumber(input)
 
         # compare answer to solution
         self.assertTrue(test_solution == output)
