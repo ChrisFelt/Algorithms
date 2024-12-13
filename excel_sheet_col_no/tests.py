@@ -34,6 +34,27 @@ class TestSolution(unittest.TestCase):
 
         # compare answer to solution
         self.assertTrue(test_solution == output)
+    
+    # additional tests
+    def test_004(self):
+        # setup test
+        check_solution = Solution()
+        input = "AAA"
+        output = 703
+        test_solution = check_solution.titleToNumber(input)
+
+        # compare answer to solution
+        self.assertTrue(test_solution == output)
+    
+    def test_004(self):
+        # setup test
+        check_solution = Solution()
+        input = "AAAAAAA"
+        output = 321272407
+        test_solution = check_solution.titleToNumber(input)
+
+        # compare answer to solution
+        self.assertTrue(test_solution == output)
 
 
 if __name__ == '__main__':
