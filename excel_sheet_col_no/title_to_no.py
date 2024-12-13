@@ -7,7 +7,7 @@ class Solution:
         # sum the following:
         # 26 ** position from end * char_val
         for char in columnTitle[::-1]:
-            sum += 26 ** pos * (ord(char) - 64)
+            sum += 26 ** pos * (ord(char) - 64)  # ord() function finds ASCII value of character
             pos += 1
 
         return sum
