@@ -1,6 +1,7 @@
 class Solution:
     def climbStairs(self, n: int) -> int:
         # Time complexity of this solution: appears to be O(n!) ...
+        # Todo: try memoizing - should have same pattern as fibonacci sequence
 
         # recursively explore all paths
         def stairs_rec(s: int) -> int:
