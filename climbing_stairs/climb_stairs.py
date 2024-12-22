@@ -2,7 +2,7 @@ class Solution:
     def climbStairs(self, n: int) -> int:
         # Time complexity of this solution: O(n)
         # store solution at each value of n computed
-        # n[0] is skipped in stairs_rec because n >= 1
+        # memo[0] is skipped in stairs_rec because n >= 1
         memo = [-1] * (n + 1)
 
         # recursively explore all paths from the top down
