@@ -37,6 +37,17 @@ class TestSolution(unittest.TestCase):
 
         # compare answer to solution
         self.assertTrue(test_solution == output)
+    
+    def test_004(self):
+        # setup test
+        check_solution = Solution()
+        s = "bbbaaaba"
+        t = "aaabbbba"
+        output = False
+        test_solution = check_solution.isIsomorphic(s, t)
+
+        # compare answer to solution
+        self.assertTrue(test_solution == output)
 
 
 if __name__ == '__main__':
