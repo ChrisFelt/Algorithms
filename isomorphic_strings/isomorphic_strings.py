@@ -14,8 +14,8 @@ class Solution:
             if t[i] not in t_dict:
                 t_dict[t[i]] = i
             
-            # characters should always appear at the same index across strings
-            # if character already exists in the dictionary but has a different index, then the strings are not isomorphs
+            # character pairs should always appear at the same index across strings
+            # if character already exists in the dictionary but has a different index from it's pair, then the strings are not isomorphs
             if s_dict[s[i]] != t_dict[t[i]]:
                 return False
         
